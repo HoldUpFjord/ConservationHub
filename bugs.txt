@@ -1,0 +1,1 @@
+1.) upon todo's deleting, on re-render, error where line 107: <%post.title%. has a value of null
