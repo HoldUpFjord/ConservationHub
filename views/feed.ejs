@@ -178,8 +178,8 @@
           <p class="text-base font-semibold text-gray-900">Work from home accessories</p>
         </div-->
  
-        <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:gap-x-6 lg:space-y-0">
-          <ul class="group relative">
+        <div class="">
+          <ul class="mt-6 space-y-12 lg:grid lg:grid-cols-3  lg:gap-x-6 lg:space-y-0 auto-cols-fr">
             <% for(var i=0; i<posts.length; i++) {%>
               <li class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 ">
                 <a href="/post/<%= posts[i]._id%>">
