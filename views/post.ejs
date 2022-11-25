@@ -104,16 +104,16 @@
 <div class="container ">
   <div class="flex flex-col items-center mt-5">
     <div class="col-6">
-      <h2 class="flex justify-center"><%= post.title %></h2>
+      <h2 class="flex justify-center lg:text-6xl"><%= post.title %></h2>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between">
-        <form
+        <!-- form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
+        </form-->
         <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %> 
         <form
@@ -123,16 +123,17 @@
         >
           <button class="btn btn-outline btn-error " type="submit">Delete Post</button>
         </form>
+        <div class="col-3 mt-5  ">
+          <p><%= post.caption %></p>
+          <h2> Address: <%= post.address %></h2>
+        </div>
         <%}%>
       </div>
     </div>
-   <div class="grid grid-cols-2 grid-rows-2">
-    <div class="col-3 mt-5  border-4 border-white">
-      <p><%= post.caption %></p>
-      <h2> Address: <%= post.address %></h2>
-    </div>
+   <div class="">
     
-    <div class="mt-5  border-4 border-white">
+    
+    <!-- div class="">
       <h2>Add a Comment</h2>
       <form action="/comment/createComment/<%=post._id%>"  method="POST">
         <div class="mb-3">
@@ -142,11 +143,11 @@
         <button type="submit" class="btn btn-primary" >Submit</button>
       </form>
       <ul> 
-        <!--createdById not showing up in DB as a argument. Is in Schema. Not Priority bug for MVP-->
+        <createdById not showing up in DB as a argument. Is in Schema. Not Priority bug for MVP>
         <% for(var i=0; i<comments.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
            User <%= comments[i].createdBy%> says: "<%= comments[i].comment%>"
-           <!-- Conditinal doesn't work due to createdById bug. Line 48 should be === user.id Refrenced line 43 and models/comments.js-->
+           <Conditinal doesn't work due to createdById bug. Line 48 should be === user.id Refrenced line 43 and models/comments.js>
            <% if( comments[i].createdById == user.userame) {%>
             
            <form
@@ -161,9 +162,9 @@
          
         <% } %>
       </ul>
-    </div>
-    
-    <div class="mt-5  border-4 border-white">
+    </div -->
+  <div class="flex">
+    <div class="mt-5  mr-48">
       <h2>Add a Inventory item</h2>
       <!-- inventoryItem is a server req, response is InventoryRoutes. Routes calls the controller, which provides the creteInventoryItem function -->
       <form action="/inventoryItem/createInventoryItem/<%=post._id%>"  method="POST">
@@ -191,7 +192,7 @@
         <% } %>
       </ul>
     </div>
-  <div class="border-4 border-white">
+  <div class="mt-5 ml-48">
     <h2>Todos</h2>
     <form action="/todos/createTodo/<%=post._id%>" method='POST'>
       <input type="text" placeholder="Enter Todo Item" name='todoItem'>
@@ -217,6 +218,7 @@
     </ul>
   </div> 
   </div>
+</div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
       <a class="btn btn-primary" href="/feed">Return to Feed</a>
