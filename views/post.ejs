@@ -102,7 +102,7 @@
 
 
 <div class="container relative">
-  <div class="bg-cover bg-center h-screen opacity-30" style="background-image: url('<%= post.image%>')">
+  <div class="bg-cover bg-center h-screen opacity-20 mx-64 mb-64 mt-32 border-8 border-solid rounded-2xl " style="background-image: url('<%= post.image%>')">
   
   </div>
   <!--img class="bg-cover bg-center" src="<%= post.image%>" /-->
@@ -118,7 +118,7 @@
         >
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form-->
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
+        <!-- h3 class="col-3">Likes: <%= post.likes %></h3-->
         <%if(post.user == user.id){ %> 
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
@@ -169,7 +169,7 @@
     </div -->
   <div class="flex">
     <div class="mt-5  mr-48">
-      <h2>Add a Inventory item</h2>
+      <h2 class = 'text-lg'>Add a Inventory item</h2>
       <!-- inventoryItem is a server req, response is InventoryRoutes. Routes calls the controller, which provides the creteInventoryItem function -->
       <form action="/inventoryItem/createInventoryItem/<%=post._id%>"  method="POST">
         <div class="mb-3">
