@@ -101,11 +101,15 @@
 </nav>
 
 
-<div class="container ">
-  <div class="flex flex-col items-center mt-5">
+<div class="container relative">
+  <div class="bg-cover bg-center h-screen opacity-30" style="background-image: url('<%= post.image%>')">
+  
+  </div>
+  <!--img class="bg-cover bg-center" src="<%= post.image%>" /-->
+  <div class="flex flex-col items-center mt-5 absolute inset-0">
     <div class="col-6">
       <h2 class="flex justify-center lg:text-6xl"><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
+      
       <div class="row justify-content-between">
         <!-- form
           class="col-1"
