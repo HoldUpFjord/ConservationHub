@@ -193,15 +193,16 @@
               <li class='todoItem' data-id='<%el._id%>'>
                 <span class='text-lg <%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
                 <div class="flex">
-                  <form
+                  <!-- Commented out forms as we arrived at a front-end solution. Work looking into a backend solution as a future point-->
+                  <!--form
                   action="/todos/markComplete<%= post._id %>/<%= el._id%>?_method=PUT"
                   method="PUT"
                   id="checkBox"
                   >
 
-                  </form>
+                  </form-->
                   <input id ='<%el._id%>' type="checkbox" checked="" class="checkbox w-6 h-6 min-h-6 mx-.5" /> 
-                  <label for="%el._id%"></label>
+                  
                     
                   
                   <form
@@ -255,6 +256,6 @@
   </div>
 </div>
 
-<script src="public\js\main.js"></script>
+<script src="\js\main.js"></script>
 
 <%- include('partials/footer') -%>
