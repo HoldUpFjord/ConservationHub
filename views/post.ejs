@@ -110,29 +110,7 @@
     <div class="col-6">
       <h2 class="flex justify-center lg:text-6xl"><%= post.title %></h2>
       
-      <div class="row justify-content-between">
-        <!-- form
-          class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form-->
-        <!-- h3 class="col-3">Likes: <%= post.likes %></h3-->
-        <%if(post.user == user.id){ %> 
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-outline btn-error " type="submit">Delete Post</button>
-        </form>
-        <div class="col-3 mt-5  ">
-          <p><%= post.caption %></p>
-          <h2> Address: <%= post.address %></h2>
-        </div>
-        <%}%>
-      </div>
+      
     </div>
    <div class="">
     
@@ -176,7 +154,7 @@
             <input type="number" class="form-control shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="amount" name="amount" placeholder="Number of tools e.g.: 1,2,3 etc">
             <input type="text" class="form-control shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="tool" name="tool" placeholder="Name of tool">
         </div>
-        <button type="submit" class="btn btn-primary" >Add</button>
+        <button type="submit" class="btn btn-outline btn-warning " >Add</button>
       </form>
       <ul> 
         <% for(var i=0; i<inventory.length; i++) {%>
@@ -207,14 +185,23 @@
     </div>
       
       <!-- input type="submit"-->
-      <button type="submit" class="btn btn-primary" >Add</button>
+      <button type="submit" class="btn btn-outline btn-warning " >Add</button>
     </form>
     <ul>
       <% todo.forEach( el => { %>
         <!-- delete works: on re-render line 107: <% post.title %> has the value of null-->
               <li class='todoItem' data-id='<%el._id%>'>
-                  <span class='text-2xl <%= checkbox.checked === true ? 'querySelector('.text-2xl').classList.toggle("checked");' : 'not'%>'><%= el.todo %></span>
-                  <input type="checkbox" checked="" class="checkbox w-6 h-6 min-h-6" /> 
+                <span class='text-lg <%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <div class="flex">
+                  <form
+                  action="/todos/markComplete<%= post._id %>/<%= el._id%>?_method=PUT"
+                  method="PUT"
+                  id="checkBox"
+                  >
+
+                  </form>
+                  <input id ='<%el._id%>' type="checkbox" checked="" class="checkbox w-6 h-6 min-h-6 mx-.5" /> 
+                  <label for="%el._id%"></label>
                     
                   
                   <form
@@ -223,20 +210,51 @@
                   class="col-3"
                   >
                   <button class="btn btn-outline btn-error" type="submit">Delete</button>
-                </form>
+                  </form>
                    
-                   
+                </div>  
               </li>
       <% }) %>    
     </ul>
   </div> 
+ 
   </div>
 </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    <div class="col-6 mt-5 w-2/5">
+      <div class="row justify-content-between">
+        <!-- form
+          class="col-1"
+          action="/post/likePost/<%= post.id %>?_method=PUT"
+          method="POST"
+        >
+          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+        </form-->
+        <!-- h3 class="col-3">Likes: <%= post.likes %></h3-->
+        <div class="col -3mt-5 flex flex-col ">
+          <p class="flex justify-center"><%= post.caption %></p>
+          <h2 class="flex justify-center"> Address: <%= post.address %></h2>
+        </div>
+        <div class="flex justify-evenly ">
+          <%if(post.user == user.id){ %> 
+            <form
+              action="/post/deletePost/<%= post.id %>?_method=DELETE"
+              method="POST"
+              class="col-3"
+            >
+              <button class="btn btn-outline btn-error " type="submit">Delete Post</button>
+            </form>
+            
+            <%}%>
+            <a class="btn btn btn-outline btn-warning " href="/profile">Return to Profile</a>
+            <a class="btn btn btn-outline btn-warning " href="/feed">Return to Feed</a>
+        </div>
+       
+      </div>
+     
     </div>
   </div>
 </div>
+
+<script src="public\js\main.js"></script>
 
 <%- include('partials/footer') -%>
