@@ -74,7 +74,7 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-          <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+          <div class=" invisible absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
@@ -102,13 +102,17 @@
 
 
 <div class="container relative">
-  <div class="bg-cover bg-center h-screen opacity-20 mx-64 mb-64 mt-32 border-8 border-solid rounded-2xl " style="background-image: url('<%= post.image%>')">
+  <!--div class="bg-cover bg-center h-screen opacity-20 mx-64 mb-64 mt-32 border-8 border-solid rounded-2xl " style="background-image: url('<%= post.image%>')"-->
   
   </div>
   <!--img class="bg-cover bg-center" src="<%= post.image%>" /-->
   <div class="flex flex-col items-center mt-5 absolute inset-0">
     <div class="col-6">
       <h2 class="flex justify-center lg:text-6xl"><%= post.title %></h2>
+      <div class="w-8">
+        <img src='<%= post.image%>' class="">
+      </div>
+      
       
       
     </div>
