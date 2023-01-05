@@ -66,7 +66,7 @@
           </button>
   
           <!-- Profile dropdown -->
-          <div class="relative ml-3">
+          <div class=" invisible relative ml-3">
             <div>
               <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                 <span class="sr-only">Open user menu</span>
@@ -131,10 +131,10 @@
   }
   ```
 -->
-<div class="bg-gray-800">
+<div class="">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-      <h2 class="text-2xl font-bold text-slate-50">Project Sites</h2>
+      <h2 class="text-2xl font-bold text-green-200">Project Sites</h2>
 
       <!--div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
         <div class="group relative">
@@ -153,9 +153,9 @@
         <div class="">
           <ul class="mt-6 space-y-12 lg:grid lg:grid-cols-3  lg:gap-x-6 lg:space-y-0 auto-cols-fr">
             <% for(var i=0; i<posts.length; i++) {%>
-              <li class="relative h-80 w-full overflow-hidden rounded-lg bg-gray-800 group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 ">
+              <li class="relative h-80 w-full overflow-hidden rounded-lg group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 ">
                 <a href="/post/<%= posts[i]._id%>">
-                  <p class="text-slate-50"> <%= posts[i].title%></p>
+                  <p class=" flex justify-center font-mono text-slate-50  text-xl"> <%= posts[i].title%></p>
                   <img class="h-full w-full object-cover object-center aspect-h-1 aspect-w-1" src="<%= posts[i].image%>">
                 </a>
               </li>
