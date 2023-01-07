@@ -11,9 +11,9 @@ var checkbox = document.querySelectorAll("input[type=checkbox]");
 // funtion expression: function with name.  i.e a response to a event listner
 function handleCheckbox(){
     //condtional 
-    const div = this.parentNode
-    const li = div.parentNode
-    const span = li.childNodes[1]
+    //const div = this.parentNode
+    const li = this.parentNode
+    const span = li.childNodes[3]
         if (this.checked) {
          
           span.classList.remove("not")
