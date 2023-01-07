@@ -109,7 +109,10 @@
       <h2 class="flex justify-center lg:text-6xl"><%= post.title %></h2>
       <!--img src='<%= post.image%>' class=""-->
       
-      
+      <div class="col -3mt-5 flex flex-col ">
+        <p class="flex justify-center"><%= post.caption %></p>
+        <h2 class="flex justify-center"> Address: <%= post.address %></h2>
+      </div>
     </div>
    <div class="w-full">
     
@@ -233,10 +236,7 @@
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form-->
         <!-- h3 class="col-3">Likes: <%= post.likes %></h3-->
-        <div class="col -3mt-5 flex flex-col ">
-          <p class="flex justify-center"><%= post.caption %></p>
-          <h2 class="flex justify-center"> Address: <%= post.address %></h2>
-        </div>
+        
         <div class="flex justify-evenly ">
           <%if(post.user == user.id){ %> 
             <form
