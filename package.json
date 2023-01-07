@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "Conservation-Hub",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "A application that assists Conservation Corps and their employess in tracking the development of their project-sites ",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
