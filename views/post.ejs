@@ -102,9 +102,7 @@
 
 
 <div class="container relative">
-  <div class="bg-cover bg-center h-screen opacity-60 mx-64 mb-64 mt-32 border-8 border-solid rounded-2xl " style="background-image: url('<%= post.image%>')">
   
-  </div>
   <!--img class="bg-cover bg-center" src="<%= post.image%>" /-->
   <div class="flex flex-col items-center mt-5 absolute inset-0">
     <div class="col-6">
@@ -146,8 +144,8 @@
         <% } %>
       </ul>
     </div -->
-  <div class="flex">
-    <div class="mt-5  mr-48">
+  <div class="flex flex-col">
+    <div class="bg-zinc-300 mt-5  mr-48 ">
       <h2 class = 'text-lg'>Add a Inventory item</h2>
       <!-- inventoryItem is a server req, response is InventoryRoutes. Routes calls the controller, which provides the creteInventoryItem function -->
       <form action="/inventoryItem/createInventoryItem/<%=post._id%>"  method="POST">
@@ -155,7 +153,7 @@
             <input type="number" class="form-control shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="amount" name="amount" placeholder="Number of tools e.g.: 1,2,3 etc">
             <input type="text" class="form-control shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" id="tool" name="tool" placeholder="Name of tool">
         </div>
-        <button type="submit" class="btn btn-outline btn-warning " >Add</button>
+        <button type="submit" class="flex w-2/12 items-center justify-center rounded-md border border-transparent bg-green-700 px-8 py-3 text-base font-medium text-white hover:bg-green-500 md:py-4 md:px-10 md:text-lg"" >Add</button>
       </form>
       <ul> 
         <% for(var i=0; i<inventory.length; i++) {%>
@@ -175,7 +173,9 @@
         <% } %>
       </ul>
     </div>
-  <div class="mt-5 ml-48">
+    <section class="bg-cover bg-center bg-fixed h-screen container m-auto opacity-80   mb-12  border-8 border-solid rounded-2xl " style="background-image: url('<%= post.image%>')"></section>
+
+  <div class=" bg-lime-100 mt-5 ml-48">
     <h2 class="text-lg">Todos</h2>
     <form 
     action="/todos/createTodo/<%=post._id%>" 
@@ -186,12 +186,13 @@
     </div>
       
       <!-- input type="submit"-->
-      <button type="submit" class="btn btn-outline btn-warning " >Add</button>
+      <button type="submit" class="flex w-2/12 items-center justify-center rounded-md border border-transparent bg-green-700 px-8 py-3 text-base font-medium text-white hover:bg-green-500 md:py-4 md:px-10 md:text-lg" >Add</button>
     </form>
     <ul>
       <% todo.forEach( el => { %>
         <!-- delete works: on re-render line 107: <% post.title %> has the value of null-->
-              <li class='todoItem' data-id='<%el._id%>'>
+              <li class='todoItem ml-1' data-id='<%el._id%>'>
+                <input id ='<%el._id%>' type="checkbox" checked="" class="checkbox w-6 h-6 min-h-6 mx-.5" /> 
                 <span class='text-lg <%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
                 <div class="flex">
                   <!-- Commented out forms as we arrived at a front-end solution. Work looking into a backend solution as a future point-->
@@ -202,7 +203,7 @@
                   >
 
                   </form-->
-                  <input id ='<%el._id%>' type="checkbox" checked="" class="checkbox w-6 h-6 min-h-6 mx-.5" /> 
+                  
                   
                     
                   
