@@ -112,21 +112,21 @@
           <div class="mt-5 flex flex-col items-center">
             <div class="col-6">
               <h3> My Project-Sites</h3>
-              <ul class="row list-unstyled">
+              <ul class="row list-unstyled flex flex-row flex-wrap">
               <% for(var i=0; i<posts.length; i++) {%>
                 <li class="col-6 justify-content-between mt-5">
                   <a href="/post/<%= posts[i]._id%>">
-                    <img class="img-fluid rounded-3xl" src="<%= posts[i].image%>">
+                    <img class="img-fluid rounded-3xl mr-4" src="<%= posts[i].image%>">
                   </a>
                 </li>
               <% } %>
               </ul>
-              <div class="row justify-content-center mt-5">
+              <div class="row flex justify-center mt-5">
                 <a class="btn btn-primary" href="/feed">Go-to All Project-Sites</a>
               </div>  
             </div>  
             <div class="flex pr-16">
-              <h2>Add a Project-Site </h2>
+              <h2 class="underline underline-offset-4">Add a Project-Site </h2>
               <svg 
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#82ca34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
