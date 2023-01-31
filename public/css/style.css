@@ -1,3 +1,24 @@
+* {
+   
+    box-sizing: border-box;
+    --content-bg:rgb(255, 255, 255);
+    --border: 5px;
+    --gradient: linear-gradient(to right, rgba(222, 222, 222, 0.881), green);
+    --hover-gradient: linear-gradient(to right, green, rgba(222, 221, 221, 0.887));
+  }
+  .card.normal {
+    border-radius: 12px;
+    padding: var(--border);
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(var(--content-bg), var(--content-bg)),
+      var(--gradient);
+  }
+  
+  .normal.card:hover {
+    background-image: linear-gradient(var(--content-bg), var(--content-bg)),
+      var(--hover-gradient);
+  }
+  
 .completed{
     text-decoration: line-through;
     color: gray;
