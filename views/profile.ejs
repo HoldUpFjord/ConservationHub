@@ -109,51 +109,55 @@
               <p><strong>Email</strong>: <%= user.email %></p>
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
-          <div class="mt-5 flex flex-col items-center">
+          <div class="mt-5  flex flex-row items-center">
+            <div class="flex flex-col mr-3"> 
+              <div class="flex pr-16">
+                <h2 class="h2 text-3xl  underline underline-offset-4">Add a Project-Site </h2>
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#82ca34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+              <div class="card normal">
+                <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                  <div class="mb-3 ">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" class="form-control border-2 border-solid border-black rounded" id="title" name="title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="caption" class="form-label">Caption</label>
+                    <textarea class="form-control border-2 border-solid border-black rounded" id="caption" name="caption"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imgUpload" class="form-label">Image</label>
+                    <input type="file" class="form-control border-2 border-solid border-black rounded" id="imageUpload" name="file">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Address" class="form-label">Address</label>
+                    <input type="text" class="form-control border-2 border-solid border-black rounded" id="address" name="address">
+                  </div>
+                  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                </form>
+              </div>
+             </div>
             <div class="col-6">
               <h3> My Project-Sites</h3>
               <ul class="row list-unstyled flex flex-row flex-wrap">
               <% for(var i=0; i<posts.length; i++) {%>
                 <li class="col-6 justify-content-between mt-5">
                   <a href="/post/<%= posts[i]._id%>">
-                    <img class="img-fluid rounded-3xl mr-4" src="<%= posts[i].image%>">
+                    <img class="img-fluid rounded-3xl mr-4 w-4/5 h-4/5" src="<%= posts[i].image%>">
                   </a>
                 </li>
               <% } %>
               </ul>
-              <div class="row flex justify-center mt-5">
-                <a class="btn btn-primary" href="/feed">Go-to All Project-Sites</a>
-              </div>  
-            </div>  
-            <div class="flex pr-16">
-              <h2 class="underline underline-offset-4">Add a Project-Site </h2>
-              <svg 
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#82ca34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
+             
             </div>
-            
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3 ">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control border-2 border-solid border-black rounded" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control border-2 border-solid border-black rounded" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control border-2 border-solid border-black rounded" id="imageUpload" name="file">
-              </div>
-              <div class="mb-3">
-                <label for="Address" class="form-label">Address</label>
-                <input type="text" class="form-control border-2 border-solid border-black rounded" id="address" name="address">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
+
           </div>
       </div>
-      
+      <div class="row flex justify-center mt-5">
+        <a class="btn btn-primary" href="/feed">Go-to All Project-Sites</a>
+      </div>  
     </div>
   </div>
 </div>
